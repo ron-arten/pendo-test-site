@@ -1,0 +1,65 @@
+<head>
+  <link href="style.css" rel="stylesheet" />
+  <script>
+    (function (apiKey) {
+      (function (p, e, n, d, o) {
+        var v, w, x, y, z;
+        o = p[d] = p[d] || {};
+        o._q = o._q || [];
+        v = ["initialize", "identify", "updateOptions", "pageLoad", "track"];
+        for (w = 0, x = v.length; w < x; ++w)
+          (function (m) {
+            o[m] =
+              o[m] ||
+              function () {
+                o._q[m === v[0] ? "unshift" : "push"](
+                  [m].concat([].slice.call(arguments, 0))
+                );
+              };
+          })(v[w]);
+        y = e.createElement(n);
+        y.async = !0;
+        y.src = "https://cdn.pendo.io/agent/static/" + apiKey + "/pendo.js";
+        z = e.getElementsByTagName(n)[0];
+        z.parentNode.insertBefore(y, z);
+      })(window, document, "script", "pendo");
+
+      // Call this whenever information about your visitors becomes available
+      // Please use Strings, Numbers, or Bools for value types.
+      pendo.initialize({
+        visitor: {
+          id: "VISITOR-UNIQUE-ID", // Required if user is logged in
+          email: "just@test.com", // Recommended if using Pendo Feedback, or NPS Email
+          full_name: "Test McGee", // Recommended if using Pendo Feedback
+          role: "visitor", // Optional
+
+          // You can add any additional visitor level key-values here,
+          // as long as it's not one of the above reserved names.
+        },
+
+        account: {
+          id: "ACCOUNT-UNIQUE-ID", // Highly recommended
+          name: "Best Ever Sites", // Optional
+          is_paying: 1, // Recommended if using Pendo Feedback
+          monthly_value: 30, // Recommended if using Pendo Feedback
+          planLevel: "X", // Optional
+          planPrice: 3.3, // Optional
+          creationDate: Date.now(), // Optional
+
+          // You can add any additional account level key-values here,
+          // as long as it's not one of the above reserved names.
+        },
+      });
+    })("e409807d-2495-432d-6a35-4f9b70cc1387");
+  </script>
+</head>
+
+<h2>This is another page on this website</h2>
+
+<p>Write something in this text box</p>
+<textarea></textarea>
+
+<p>Then click submit and it will pop up in your face</p>
+
+<button>Press for excitement</button>
+<button id="backButton" onclick="window.history.back()">Back</button>

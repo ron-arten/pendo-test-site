@@ -1,0 +1,25 @@
+body {
+  text-align: center;
+}
+.largeText {
+}
+input,
+textarea,
+button {
+  width: 50px;
+  padding: 5;
+  margin: 5;
+  box-sizing: border-box;
+}
+select {
+  width: 200px;
+  padding: 5;
+  margin: 5;
+}
+
+#radio {
+  margin-bottom: 25px;
+}
+#page2 {
+  text-align: right;
+}
