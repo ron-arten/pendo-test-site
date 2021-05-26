@@ -1,126 +1,144 @@
-<head>
-  <link href="style.css" rel="stylesheet" />
-  <script>
-    (function (apiKey) {
-      (function (p, e, n, d, o) {
-        var v, w, x, y, z;
-        o = p[d] = p[d] || {};
-        o._q = o._q || [];
-        v = ["initialize", "identify", "updateOptions", "pageLoad", "track"];
-        for (w = 0, x = v.length; w < x; ++w)
-          (function (m) {
-            o[m] =
-              o[m] ||
-              function () {
-                o._q[m === v[0] ? "unshift" : "push"](
-                  [m].concat([].slice.call(arguments, 0))
-                );
-              };
-          })(v[w]);
-        y = e.createElement(n);
-        y.async = !0;
-        y.src = "https://cdn.pendo.io/agent/static/" + apiKey + "/pendo.js";
-        z = e.getElementsByTagName(n)[0];
-        z.parentNode.insertBefore(y, z);
-      })(window, document, "script", "pendo");
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="style.css" rel="stylesheet" />
+    <script>
+      (function (apiKey) {
+        (function (p, e, n, d, o) {
+          var v, w, x, y, z;
+          o = p[d] = p[d] || {};
+          o._q = o._q || [];
+          v = ["initialize", "identify", "updateOptions", "pageLoad", "track"];
+          for (w = 0, x = v.length; w < x; ++w)
+            (function (m) {
+              o[m] =
+                o[m] ||
+                function () {
+                  o._q[m === v[0] ? "unshift" : "push"](
+                    [m].concat([].slice.call(arguments, 0))
+                  );
+                };
+            })(v[w]);
+          y = e.createElement(n);
+          y.async = !0;
+          y.src = "https://cdn.pendo.io/agent/static/" + apiKey + "/pendo.js";
+          z = e.getElementsByTagName(n)[0];
+          z.parentNode.insertBefore(y, z);
+        })(window, document, "script", "pendo");
 
-      // Call this whenever information about your visitors becomes available
-      // Please use Strings, Numbers, or Bools for value types.
-      pendo.initialize({
-        visitor: {
-          id: "ron", // Required if user is logged in
-          email: "just@test.com", // Recommended if using Pendo Feedback, or NPS Email
-          full_name: "", // Recommended if using Pendo Feedback
-          role: "visitor", // Optional
-          language: "sw",
+        // Call this whenever information about your visitors becomes available
+        // Please use Strings, Numbers, or Bools for value types.
+        pendo.initialize({
+          visitor: {
+            id: "ron", // Required if user is logged in
+            email: "just@test.com", // Recommended if using Pendo Feedback, or NPS Email
+            full_name: "", // Recommended if using Pendo Feedback
+            role: "visitor", // Optional
+            language: "sw",
+            customUrl: "https://www.temporary-url.com/596A",
 
-          // You can add any additional visitor level key-values here,
-          // as long as it's not one of the above reserved names.
-        },
+            // You can add any additional visitor level key-values here,
+            // as long as it's not one of the above reserved names.
+          },
 
-        account: {
-          id: "ACCOUNT-UNIQUE-ID", // Highly recommended
-          name: "Best Ever Sites", // Optional
-          is_paying: 1, // Recommended if using Pendo Feedback
-          monthly_value: 30, // Recommended if using Pendo Feedback
-          planLevel: "X", // Optional
-          planPrice: 3.3, // Optional
-          creationDate: Date.now(), // Optional
+          account: {
+            id: "ACCOUNT-UNIQUE-ID", // Highly recommended
+            name: "Best Ever Sites", // Optional
+            is_paying: 1, // Recommended if using Pendo Feedback
+            monthly_value: 30, // Recommended if using Pendo Feedback
+            planLevel: "X", // Optional
+            planPrice: 3.3, // Optional
+            creationDate: Date.now(), // Optional
 
-          // You can add any additional account level key-values here,
-          // as long as it's not one of the above reserved names.
-        },
-      });
-    })("e409807d-2495-432d-6a35-4f9b70cc1387");
-  </script>
-</head>
-<body>
-  <div id="title_page" class="large_text">
-    <h1>Tell us more about you</h1>
-    <h3>The information you provide will be used to make a clone</h3>
-  </div>
-  <a id="page2" href="pagetwo.html" style="text-decoration: none" color="black"
-    >Page 2</a
-  >
-  <!-- FORM STARTS -->
-  <form>
-    <p>Please select your preferred contact method:</p>
-    <div id="radio" class="myForm">
-      <input type="radio" id="contactChoice1" name="contact" value="email" />
-      <label for="contactChoice1">Email</label>
-
-      <input type="radio" id="contactChoice2" name="contact" value="phone" />
-      <label for="contactChoice2">Phone</label>
-
-      <input type="radio" id="contactChoice3" name="contact" value="facebook" />
-      <label for="contactChoice3">Instagram</label>
-
-      <input type="radio" id="contactChoice4" name="contact" value="facebook" />
-      <label for="contactChoice3">FaceBook</label>
+            // You can add any additional account level key-values here,
+            // as long as it's not one of the above reserved names.
+          },
+        });
+      })("e409807d-2495-432d-6a35-4f9b70cc1387");
+    </script>
+  </head>
+  <body>
+    <div id="title_page" class="large_text">
+      <h1>Tell us more about you</h1>
+      <h3>The information you provide will be used to make a clone</h3>
     </div>
+    <a
+      id="page2"
+      href="pagetwo.html"
+      style="text-decoration: none"
+      color="black"
+      >Page 2</a
+    >
+    <!-- FORM STARTS -->
+    <form>
+      <p>Please select your preferred contact method:</p>
+      <div id="radio" class="myForm">
+        <input type="radio" id="contactChoice1" name="contact" value="email" />
+        <label for="contactChoice1">Email</label>
 
-    <div id="dropdown" class="myForm">
-      <label for="pet-select">What was your first pet?:</label>
+        <input type="radio" id="contactChoice2" name="contact" value="phone" />
+        <label for="contactChoice2">Phone</label>
 
-      <select name="pets" id="pet-select">
-        <option value="">--Please choose an option--</option>
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="hamster">Hamster</option>
-        <option value="parrot">Parrot</option>
-        <option value="spider">Spider</option>
-        <option value="goldfish">Goldfish</option>
-      </select>
-    </div>
+        <input
+          type="radio"
+          id="contactChoice3"
+          name="contact"
+          value="facebook"
+        />
+        <label for="contactChoice3">Instagram</label>
 
-    <p>Make a sandwhich:</p>
+        <input
+          type="radio"
+          id="contactChoice4"
+          name="contact"
+          value="facebook"
+        />
+        <label for="contactChoice3">FaceBook</label>
+      </div>
 
-    <div id="checkbox" class="myForm">
-      <input type="checkbox" id="bolony" name="bolony" checked />
-      <label for="bolony">Bolony</label>
-    </div>
+      <div id="dropdown" class="myForm">
+        <label for="pet-select">What was your first pet?:</label>
 
-    <div>
-      <input type="checkbox" id="bread" name="bread" />
-      <label for="bread">Bread</label>
-    </div>
+        <select name="pets" id="pet-select">
+          <option value="">--Please choose an option--</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="hamster">Hamster</option>
+          <option value="parrot">Parrot</option>
+          <option value="spider">Spider</option>
+          <option value="goldfish">Goldfish</option>
+        </select>
+      </div>
 
-    <div>
-      <input type="checkbox" id="mustard" name="mustard" />
-      <label for="mustard">Mustard</label>
-    </div>
+      <p>Make a sandwhich:</p>
 
-    <div>
-      <input type="checkbox" id="cheese" name="cheese" />
-      <label for="cheese">Cheese</label>
-    </div>
+      <div id="checkbox" class="myForm">
+        <input type="checkbox" id="bolony" name="bolony" checked />
+        <label for="bolony">Bolony</label>
+      </div>
 
-    <div>
-      <button type="submit">Submit</button>
-    </div>
-  </form>
+      <div>
+        <input type="checkbox" id="bread" name="bread" />
+        <label for="bread">Bread</label>
+      </div>
 
-  <!-- FORM ENDS -->
+      <div>
+        <input type="checkbox" id="mustard" name="mustard" />
+        <label for="mustard">Mustard</label>
+      </div>
 
-  <p>Please visit the next page after this has been complete</p>
-</body>
+      <div>
+        <input type="checkbox" id="cheese" name="cheese" />
+        <label for="cheese">Cheese</label>
+      </div>
+
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <!-- FORM ENDS -->
+
+    <p>Please visit the next page after this has been complete</p>
+  </body>
+</html>
