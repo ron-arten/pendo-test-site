@@ -3,6 +3,33 @@
   <head>
     <link href="style.css" rel="stylesheet" />
     <script>
+      var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+      };
+
+      function success(pos) {
+        var crd = pos.coords;
+        var lat = crd.latitude;
+        var long = crd.longitude;
+
+        //// Postion values for debugging
+
+        console.log("Your current position is:");
+        // console.log(`Latitude : ${crd.latitude}`);
+        // console.log(`Longitude: ${crd.longitude}`);
+        // console.log(`More or less ${crd.accuracy} meters.`);
+      }
+
+      function error(err) {
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+      }
+
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    </script>
+    <!---------------- Pendo initialization -->
+    <script>
       (function (apiKey) {
         (function (p, e, n, d, o) {
           var v, w, x, y, z;
@@ -26,8 +53,7 @@
           z.parentNode.insertBefore(y, z);
         })(window, document, "script", "pendo");
 
-        // Call this whenever information about your visitors becomes available
-        // Please use Strings, Numbers, or Bools for value types.
+        // Strings, Numbers, or Bools for value types.
         pendo.initialize({
           visitor: {
             id: "ron", // Required if user is logged in
@@ -36,13 +62,13 @@
             role: "visitor", // Optional
             language: "sw",
             customUrl: "prod-5836",
-            // You can add any additional visitor level key-values here,
-            // as long as it's not one of the above reserved names.
+            location_lat: lat,
+            location_long: long,
           },
 
           account: {
-            id: "ACCOUNT-UNIQUE-ID", // Highly recommended
-            name: "Best Ever Sites", // Optional
+            id: "7-06 ownwards", // Highly recommended
+            name: "A company name", // Optional
             is_paying: 1, // Recommended if using Pendo Feedback
             monthly_value: 30, // Recommended if using Pendo Feedback
             planLevel: "X", // Optional
@@ -139,5 +165,6 @@
     <!-- FORM ENDS -->
 
     <p>Please visit the next page after this has been complete</p>
+    <p id=hide_me>hidden</p>
   </body>
 </html>

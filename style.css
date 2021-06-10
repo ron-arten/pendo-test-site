@@ -23,3 +23,6 @@ select {
 #page2 {
   text-align: right;
 }
+#hide_me {
+  display: none;
+}
