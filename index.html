@@ -2,6 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <link href="style.css" rel="stylesheet" />
+    <script>
+      let height = window.screen.height;
+      let width = window.screen.width;
+    </script>
 
     <!---------------- Pendo initialization -->
     <script>
@@ -38,9 +42,7 @@
             language: "sw",
             customUrl: "ron-arten",
             trial_expiration_date: "2021-09-20T15:04:05.999-05:00",
-            screen: function () {
-              window.screen.availHeight * window.screen.availWidth;
-              return;
+            screen: `"${width} x ${height}"`
             },
           },
 
