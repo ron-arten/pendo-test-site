@@ -2,10 +2,6 @@
 <html lang="en" dir="ltr">
   <head>
     <link href="style.css" rel="stylesheet" />
-    <script>
-      let height = window.screen.height;
-      let width = window.screen.width;
-    </script>
 
     <!---------------- Pendo initialization -->
     <script>
@@ -35,19 +31,18 @@
         // Strings, Numbers, or Bools for value types.
         pendo.initialize({
           visitor: {
-            id: "bubble-Bob", // Required if user is logged in
-            email: "just@test.com", // Recommended if using Pendo Feedback, or NPS Email
+            id: "Billy Bob Junior", // Required if user is logged in
+            email: "just@this.com", // Recommended if using Pendo Feedback, or NPS Email
             full_name: "", // Recommended if using Pendo Feedback
             role: "visitor", // Optional
             language: "sw",
             customUrl: "ron-arten",
             trial_expiration_date: "2021-09-20T15:04:05.999-05:00",
-            screen: `"${width} x ${height}"`
-            },
+            screen: `"${window.screen.height} x ${window.screen.width}"`,
           },
 
           account: {
-            id: "wak::fla", // Highly recommended
+            id: "testing stuff", // Highly recommended
             name: "A company name", // Optional
             is_paying: 1, // Recommended if using Pendo Feedback
             monthly_value: 30, // Recommended if using Pendo Feedback
