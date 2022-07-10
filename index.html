@@ -31,49 +31,28 @@
         // Strings, Numbers, or Bools for value types.
         pendo.initialize({
           visitor: {
-            id: "VISITOR-UNIQUE-ID", // Required if user is logged in, default creates anonymous ID
-            // email:        // Recommended if using Pendo Feedback, or NPS Email
-            // full_name:    // Recommended if using Pendo Feedback
-            // role:         // Optional
-
-            // You can add any additional visitor level key-values here,
-            // as long as it's not one of the above reserved names.
+            id: "Ro_Ro", // Required if user is logged in
+            email: "just@thistest.com", // Recommended if using Pendo Feedback, or NPS Email
+            full_name: "", // Recommended if using Pendo Feedback
+            role: "visitor", // Optional
+            language: "sw",
+            lang: "es-mx",
+            customUrl: "ron-arten",
+            trial_expiration_date: "2021-09-20T15:04:05.999-05:00",
+            screen: `"${window.screen.height} x ${window.screen.width}"`,
           },
 
           account: {
-            id: "ACCOUNT-UNIQUE-ID", // Required if using Pendo Feedback, default uses the value 'ACCOUNT-UNIQUE-ID'
-            // name:         // Optional
-            // is_paying:    // Recommended if using Pendo Feedback
-            // monthly_value:// Recommended if using Pendo Feedback
-            // planLevel:    // Optional
-            // planPrice:    // Optional
-            // creationDate: // Optional
+            id: "Pendo_test", // Highly recommended
+            name: "A company name", // Optional
+            is_paying: 1, // Recommended if using Pendo Feedback
+            monthly_value: 30, // Recommended if using Pendo Feedback
+            planLevel: "X", // Optional
+            planPrice: 3.3, // Optional
+            creationDatesFromNow: Date.now(), // Optional
 
             // You can add any additional account level key-values here,
             // as long as it's not one of the above reserved names.
-            // visitor: {
-            //   id: "Ro_Ro", // Required if user is logged in
-            //   email: "just@thistest.com", // Recommended if using Pendo Feedback, or NPS Email
-            //   full_name: "", // Recommended if using Pendo Feedback
-            //   role: "visitor", // Optional
-            //   language: "sw",
-            //   lang: "es-mx",
-            //   customUrl: "ron-arten",
-            //   trial_expiration_date: "2021-09-20T15:04:05.999-05:00",
-            //   screen: `"${window.screen.height} x ${window.screen.width}"`,
-            // },
-
-            // account: {
-            //   id: "Pendo_test", // Highly recommended
-            //   name: "A company name", // Optional
-            //   is_paying: 1, // Recommended if using Pendo Feedback
-            //   monthly_value: 30, // Recommended if using Pendo Feedback
-            //   planLevel: "X", // Optional
-            //   planPrice: 3.3, // Optional
-            //   creationDatesFromNow: Date.now(), // Optional
-
-            //   // You can add any additional account level key-values here,
-            //   // as long as it's not one of the above reserved names.
           },
         });
       })("e409807d-2495-432d-6a35-4f9b70cc1387");
