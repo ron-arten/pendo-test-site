@@ -31,7 +31,7 @@
         // Strings, Numbers, or Bools for value types.
         pendo.initialize({
           visitor: {
-            id: "anonymous", // Required if user is logged in, default creates anonymous ID
+            id: "VISITOR-UNIQUE-ID", // Required if user is logged in, default creates anonymous ID
             // email:        // Recommended if using Pendo Feedback, or NPS Email
             // full_name:    // Recommended if using Pendo Feedback
             // role:         // Optional
@@ -41,7 +41,7 @@
           },
 
           account: {
-            id: "anonymous", // Required if using Pendo Feedback, default uses the value 'ACCOUNT-UNIQUE-ID'
+            id: "ACCOUNT-UNIQUE-ID", // Required if using Pendo Feedback, default uses the value 'ACCOUNT-UNIQUE-ID'
             // name:         // Optional
             // is_paying:    // Recommended if using Pendo Feedback
             // monthly_value:// Recommended if using Pendo Feedback
