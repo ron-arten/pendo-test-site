@@ -10,52 +10,53 @@
           var v, w, x, y, z;
           o = p[d] = p[d] || {};
           o._q = o._q || [];
-          v = ["initialize", "identify", "updateOptions", "pageLoad", "track"];
+          v = ['initialize', 'identify', 'updateOptions', 'pageLoad', 'track'];
           for (w = 0, x = v.length; w < x; ++w)
             (function (m) {
               o[m] =
                 o[m] ||
                 function () {
-                  o._q[m === v[0] ? "unshift" : "push"](
+                  o._q[m === v[0] ? 'unshift' : 'push'](
                     [m].concat([].slice.call(arguments, 0))
                   );
                 };
             })(v[w]);
           y = e.createElement(n);
           y.async = !0;
-          y.src = "https://cdn.pendo.io/agent/static/" + apiKey + "/pendo.js";
+          y.src = 'https://cdn.pendo.io/agent/static/' + apiKey + '/pendo.js';
           z = e.getElementsByTagName(n)[0];
           z.parentNode.insertBefore(y, z);
-        })(window, document, "script", "pendo");
+        })(window, document, 'script', 'pendo');
 
         // Strings, Numbers, or Bools for value types.
         pendo.initialize({
           visitor: {
-            id: "Ronald", // Required if user is logged in
-            email: "just@thistest.com", // Recommended if using Pendo Feedback, or NPS Email
-            full_name: "", // Recommended if using Pendo Feedback
-            role: "visitor", // Optional
-            language: "sw",
-            lang: "es-mx",
-            customUrl: "ron-arten",
-            trial_expiration_date: "2021-09-20T15:04:05.999-05:00",
+            id: 'Ronald', // Required if user is logged in
+            email: 'just@thistest.com', // Recommended if using Pendo Feedback, or NPS Email
+            full_name: '', // Recommended if using Pendo Feedback
+            role: 'visitor', // Optional
+            language: 'sw',
+            lang: 'es-mx',
+            customUrl: 'ron-arten',
+            trial_expiration_date: '2021-09-20T15:04:05.999-05:00',
             screen: `"${window.screen.height} x ${window.screen.width}"`,
           },
 
           account: {
-            id: "Pendo_test", // Highly recommended
-            name: "A company name", // Optional
+            id: 'Pendo_test', // Highly recommended
+            name: 'A company name', // Optional
             is_paying: 1, // Recommended if using Pendo Feedback
             monthly_value: 30, // Recommended if using Pendo Feedback
-            planLevel: "X", // Optional
+            planLevel: 'X', // Optional
             planPrice: 3.3, // Optional
             creationDatesFromNow: Date.now(), // Optional
+            creation_date: new Date(),
 
             // You can add any additional account level key-values here,
             // as long as it's not one of the above reserved names.
           },
         });
-      })("e409807d-2495-432d-6a35-4f9b70cc1387");
+      })('e409807d-2495-432d-6a35-4f9b70cc1387');
     </script>
   </head>
   <body>
