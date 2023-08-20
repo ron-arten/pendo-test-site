@@ -4,6 +4,7 @@
     <link href="style.css" rel="stylesheet" />
 
     <!---------------- Pendo initialization -->
+  
     <script>
       (function (apiKey) {
         (function (p, e, n, d, o) {
@@ -50,7 +51,7 @@
             planLevel: 'X', // Optional
             planPrice: 3.3, // Optional
             creationDatesFromNow: Date.now(), // Optional
-            creation_date: new Date(),
+            creation_date: `"${new Date()}"`,
 
             // You can add any additional account level key-values here,
             // as long as it's not one of the above reserved names.
@@ -219,5 +220,6 @@
         </div>
       </div>
     </div>
+
   </body>
 </html>
