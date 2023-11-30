@@ -1,11 +1,11 @@
 /* amaranth-700 - latin */
 @font-face {
-  font-family: "Amaranth";
+  font-family: 'Amaranth';
   font-style: normal;
   font-weight: 700;
-  src: local(""), url("fonts/amaranth-v18-latin-700.woff2") format("woff2"),
+  src: local(''), url('fonts/amaranth-v18-latin-700.woff2') format('woff2'),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("fonts/amaranth-v18-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      url('fonts/amaranth-v18-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 body {
@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #c8cacc;
   color: #000000;
 }
@@ -51,6 +51,103 @@ select {
   border-radius: 5px;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: Merriweather, Georgia, serif;
+  font-size: 62.5%;
+}
+body {
+  color: hsl(0, 0%, 10%);
+  background-color: hsl(0, 0%, 95%);
+  border-top: 5px solid hsl(220, 50%, 75%);
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 30px;
+  bottom: 0;
+  top: 0;
+}
+.hexagon {
+  position: relative;
+  display: inline-block;
+  /* left/right margin approx. 25% of .hexagon width + spacing */
+  margin: 1px 18px;
+  background-color: hsl(220, 75%, 75%);
+  text-align: center;
+}
+.hexagon,
+.hexagon::before,
+.hexagon::after {
+  /* easy way: height is width * 1.732
+  actual formula is 2*(width/(2*Math.tan(Math.PI/6)))
+  remove border-radius for sharp corners on hexagons */
+  width: 67px;
+  height: 116px;
+  border-radius: 20%/1%;
+}
+.hexagon::before {
+  background-color: inherit;
+  content: '';
+  position: absolute;
+  left: 0;
+  transform: rotate(-60deg);
+}
+.hexagon::after {
+  background-color: inherit;
+  content: '';
+  position: absolute;
+  left: 0;
+  transform: rotate(60deg);
+}
+.hexagon:nth-child(even) {
+  /* top approx. 50% of .hexagon height + spacing */
+  top: 59px;
+}
+.hexagon:hover {
+  background-color: hsla(60, 75%, 75%, 1);
+  cursor: pointer;
+  z-index: 105;
+}
+.hexagon:active {
+  background-color: hsla(60, 75%, 50%, 1);
+  z-index: 110;
+}
+.hexanone {
+  position: relative;
+  display: inline-block;
+  width: 67px;
+  height: 116px;
+  margin: 1px 18px;
+}
+.hexanone:nth-child(even) {
+  top: 59px;
+}
+.hexagontent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  z-index: 100;
+}
+.ibws-fix {
+  /* inline-block whitespace fix */
+  font-size: 0;
+}
+.honeycomb {
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* Green */
 .success {
   border-color: #04aa6d;
@@ -66,7 +163,7 @@ select {
   padding: 20px;
 }
 .form-box {
-  margin: 10px;
+  margin: auto;
   box-shadow: -5px 3px 14px 2px #00000045;
   padding: 10px;
   width: 600px;
@@ -99,7 +196,7 @@ a {
 }
 /* section 1 */
 .section-1 {
-  padding-top: 40vh;
+  padding-top: 10vh;
   text-align: center;
 }
 
@@ -136,7 +233,6 @@ a {
 }
 
 .section-2 a {
-  display: block;
   padding: 5px;
   font-size: 1.2rem;
   padding-left: 0;
