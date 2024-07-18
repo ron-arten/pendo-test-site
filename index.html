@@ -59,6 +59,13 @@
         });
       })('e409807d-2495-432d-6a35-4f9b70cc1387');
     </script>
+    <script>
+      function updateVisitorMeta() {
+        pendo.updateOptions({
+          visitor: { testMetaData: 'Only this one shows now' },
+        });
+      }
+    </script>
     <script src="https://go.questanalytics.com/js/forms2/js/forms2.min.js"></script>
   </head>
   <body>
@@ -153,6 +160,9 @@
 
           <div>
             <button type="submit">Submit</button>
+            <button type="submit" onclick="updateVisitorMeta">
+              Update Options
+            </button>
           </div>
         </form>
       </div>
