@@ -61,13 +61,7 @@
         });
       })('e409807d-2495-432d-6a35-4f9b70cc1387');
     </script>
-    <script>
-      function updateVisitorMeta() {
-        pendo.updateOptions({
-          visitor: { testMetaData: 'Only this one shows now' },
-        });
-      }
-    </script>
+    <script type="text/javascript" src="pendo-functions.js"></script>
     <script src="https://go.questanalytics.com/js/forms2/js/forms2.min.js"></script>
   </head>
   <body>
@@ -187,9 +181,15 @@
       <p>Marker</p>
       <p>Please visit the next page after this has been complete</p>
 
-      <button class="btn success">Success</button>
+      <button class="btn success">No Action</button>
+      <button class="btn success" onclick="changeVisitorId()">
+        Change Visitor Id
+      </button>
       <button class="btn success" onclick="updateVisitorMeta()">
         Update Options
+      </button>
+      <button class="btn success" onclick="changeAccountId()">
+        Change Account ID
       </button>
       <div class="honeycomb">
         <div class="ibws-fix">
