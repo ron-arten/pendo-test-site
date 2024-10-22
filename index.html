@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link href="style.css" rel="stylesheet" />
+    <link href="sass/style.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
     <!---------------- Pendo initialization -->
     <!-- <script>
       console.log = function () {};
@@ -61,309 +65,271 @@
         });
       })('e409807d-2495-432d-6a35-4f9b70cc1387');
     </script>
-    <script type="text/javascript" src="pendo-functions.js"></script>
-    <script src="https://go.questanalytics.com/js/forms2/js/forms2.min.js"></script>
+    <script type="text/javascript" src="js/pendo-functions.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script
+      src="https://cdn.withpersona.com/dist/persona-v5.1.2.js"
+      integrity="sha384-0LXHuG9ceBdEVRdF698trmE0xe0n9LgW8kNTJ9t/mH3U8VXJy0jNGMw/jPz9W82M"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const client = new Persona.Client({
+        templateId: 'itmpl_83XtiXBuDo3BywXu6ChZQL1NG3zK',
+        environmentId: 'sandbox',
+        onReady: () => client.open(),
+        onComplete: ({ inquiryId, status, fields }) => {
+          console.log(`Completed inquiry ${inquiryId} with status ${status}`);
+        },
+      });
+    </script>
   </head>
+
   <body>
-    <div class="main-body-wrapper">
-      <div id="title_page" class="large_text">
-        <h1>Tell us more about you</h1>
-        <h3>The information you provide will be used to make a clone</h3>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebartop">
+          <div class="logo">
+            <img src="/images/logo.png" alt="" />
+          </div>
+          <div class="logo-mobile">
+            <img src="/images/mobile.svg" alt="" />
+          </div>
+          <div class="menu">
+            <i class="bi bi-list"></i>
+          </div>
+        </div>
+        <div class="search">
+          <form action="">
+            <button type="submit" class="callSearch">
+              <i class="bi bi-search"></i></button
+            ><input type="text" placeholder="Search" class="searchInput" />
+          </form>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#"
+                ><i class="bi bi-speedometer"></i
+                ><span class="text">Dashboard</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="bi bi-file-earmark"></i
+                ><span class="text">Pages</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="bi bi-pencil-square"></i
+                ><span class="text">Posts</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="bi bi-people"></i><span class="text">Users</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="bi bi-gear"></i><span class="text">Settings</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="account">
+          <div class="avatar">
+            <img src="/images/avatar.jpg" alt="" />
+          </div>
+          <div class="name">
+            <h4>The DevDrawer</h4>
+            Adminstrator
+          </div>
+          <div class="logout">
+            <a href="#"><i class="bi bi-box-arrow-left"></i></a>
+          </div>
+        </div>
       </div>
-      <div id="header_test">
-        <p>This is a header test to check guide spacing rules</p>
-      </div>
-      <a
-        id="page2"
-        href="pagetwo.html"
-        style="text-decoration: none"
-        color="black"
-        >Page 2</a
-      >
-      <!-- FORM STARTS -->
-      <div class="form-box">
-        <form>
-          <p>Please select your preferred contact method:</p>
-          <div id="radio" class="myForm">
-            <input
-              type="radio"
-              id="contactChoice1"
-              name="contact"
-              value="email"
-            />
-            <label for="contactChoice1">Email</label>
-
-            <input
-              type="radio"
-              id="contactChoice2"
-              name="contact"
-              value="phone"
-            />
-            <label for="contactChoice2">Phone</label>
-
-            <input
-              type="radio"
-              id="contactChoice3"
-              name="contact"
-              value="facebook"
-            />
-            <label for="contactChoice3">Instagram</label>
-
-            <input
-              type="radio"
-              id="contactChoice4"
-              name="contact"
-              value="facebook"
-            />
-            <label for="contactChoice3">FaceBook</label>
+      <div class="main">
+        <div class="main-body-wrapper">
+          <div id="title_page" class="large_text">
+            <h1>Tell us more about you</h1>
+            <h3>The information you provide will be used to make a clone</h3>
           </div>
-
-          <div id="dropdown" class="myForm">
-            <label for="pet-select">What was your first pet?:</label>
-
-            <select name="pets" id="pet-select">
-              <option value="">--Please choose an option--</option>
-              <option value="dog">Dog</option>
-              <option value="cat">Cat</option>
-              <option value="hamster">Hamster</option>
-              <option value="parrot">Parrot</option>
-              <option value="spider">Spider</option>
-              <option value="goldfish">Goldfish</option>
-            </select>
+          <div id="header_test">
+            <p>This is a header test to check guide spacing rules</p>
           </div>
+          <a
+            id="page2"
+            href="pagetwo.html"
+            style="text-decoration: none"
+            color="black"
+            >Page 2</a
+          >
+          <!-- FORM STARTS -->
+          <div class="form-box">
+            <form>
+              <p>Please select your preferred contact method:</p>
+              <div id="radio" class="myForm">
+                <input
+                  type="radio"
+                  id="contactChoice1"
+                  name="contact"
+                  value="email"
+                />
+                <label for="contactChoice1">Email</label>
 
-          <p>Make a sandwhich:</p>
+                <input
+                  type="radio"
+                  id="contactChoice2"
+                  name="contact"
+                  value="phone"
+                />
+                <label for="contactChoice2">Phone</label>
 
-          <div id="checkbox" class="myForm">
-            <input type="checkbox" id="bolony" name="bolony" checked />
-            <label for="bolony">Bolony</label>
-          </div>
+                <input
+                  type="radio"
+                  id="contactChoice3"
+                  name="contact"
+                  value="facebook"
+                />
+                <label for="contactChoice3">Instagram</label>
 
-          <div>
-            <input type="checkbox" id="bread" name="bread" />
-            <label for="bread">Bread</label>
-          </div>
-
-          <div>
-            <input type="checkbox" id="mustard" name="mustard" />
-            <label for="mustard">Mustard</label>
-          </div>
-
-          <div>
-            <input type="checkbox" id="cheese" name="cheese" />
-            <label for="cheese">Cheese</label>
-          </div>
-
-          <div>
-            <button type="submit">Submit</button>
-          </div>
-        </form>
-      </div>
-
-      <!-- FORM ENDS -->
-      <div class="1">
-        <div class="2">
-          <div class="3">
-            <div class="4">
-              <div class="5">
-                <button
-                  class="link-button"
-                  value="peps"
-                  data-test-id="show-results-list-peps"
-                >
-                  20
-                </button>
+                <input
+                  type="radio"
+                  id="contactChoice4"
+                  name="contact"
+                  value="facebook"
+                />
+                <label for="contactChoice3">FaceBook</label>
               </div>
+
+              <div id="dropdown" class="myForm">
+                <label for="pet-select">What was your first pet?:</label>
+
+                <select name="pets" id="pet-select">
+                  <option value="">--Please choose an option--</option>
+                  <option value="dog">Dog</option>
+                  <option value="cat">Cat</option>
+                  <option value="hamster">Hamster</option>
+                  <option value="parrot">Parrot</option>
+                  <option value="spider">Spider</option>
+                  <option value="goldfish">Goldfish</option>
+                </select>
+              </div>
+
+              <p>Make a sandwhich:</p>
+
+              <div id="checkbox" class="myForm">
+                <input type="checkbox" id="bolony" name="bolony" checked />
+                <label for="bolony">Bolony</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="bread" name="bread" />
+                <label for="bread">Bread</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="mustard" name="mustard" />
+                <label for="mustard">Mustard</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="cheese" name="cheese" />
+                <label for="cheese">Cheese</label>
+              </div>
+
+              <div>
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- FORM ENDS -->
+          <div class="1">
+            <div class="2">
+              <div class="3">
+                <div class="4">
+                  <div class="5">
+                    <button
+                      class="link-button"
+                      value="peps"
+                      data-test-id="show-results-list-peps"
+                    >
+                      20
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>Marker</p>
+          <p>Please visit the next page after this has been complete</p>
+
+          <button class="btn success">No Action</button>
+          <button class="btn success" onclick="changeVisitorId()">
+            Change Visitor Id
+          </button>
+          <button class="btn success" onclick="updateVisitorMeta()">
+            Update Options
+          </button>
+          <button class="btn success" onclick="changeAccountId()">
+            Change Account ID
+          </button>
+
+          <div class="grid-2">
+            <div class="section-1">
+              <i class="fas fa-code fa-5x white"></i>
+              <h2>FirstName LastName</h2>
+              <p>City,Country.</p>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="section-2">
+              <h2>About</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perferendis quas sint et nihil iusto eius nostrum sit error,
+                repellat optio quisquam! Magnam dolore iusto cumque. Nostrum
+                error iste neque maiores.
+              </p>
+              <h2>Experience</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reiciendis in maiores autem quidem.
+              </p>
+
+              <h2>Skills</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reiciendis in maiores autem quidem obcaecati excepturi!
+                Cupiditate eaque itaque magni voluptatibus neque nobis est
+                dolor? Atque sunt minus ipsa asperiores. At.
+              </p>
+              <h2>Projects</h2>
+              <a href="#">Project 1</a>
+              <a href="#">Project 2</a>
+              <a href="#">Project 3</a>
+              <a href="#">Project 4</a>
+              <a href="#">Project 5</a>
+              <h2>Contact</h2>
+              <p>myEmail@email.com</p>
             </div>
           </div>
         </div>
       </div>
-      <p>Marker</p>
-      <p>Please visit the next page after this has been complete</p>
-
-      <button class="btn success">No Action</button>
-      <button class="btn success" onclick="changeVisitorId()">
-        Change Visitor Id
+    </div>
+    <div class="searchWindow">
+      <button type="button" class="cancelSearch">
+        <i class="bi bi-x"></i>
       </button>
-      <button class="btn success" onclick="updateVisitorMeta()">
-        Update Options
-      </button>
-      <button class="btn success" onclick="changeAccountId()">
-        Change Account ID
-      </button>
-      <div class="honeycomb">
-        <div class="ibws-fix">
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-        </div>
-        <div class="ibws-fix">
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-        </div>
-        <div class="ibws-fix">
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-        </div>
-        <div class="ibws-fix">
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-        </div>
-        <div class="ibws-fix">
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexanone">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexanone">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-          <div class="hexagon">
-            <div class="hexagontent"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="section-1">
-          <i class="fas fa-code fa-5x white"></i>
-          <h2>FirstName LastName</h2>
-          <p>City,Country.</p>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-        </div>
-        <div class="section-2">
-          <h2>About</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            quas sint et nihil iusto eius nostrum sit error, repellat optio
-            quisquam! Magnam dolore iusto cumque. Nostrum error iste neque
-            maiores.
-          </p>
-          <h2>Experience</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            in maiores autem quidem.
-          </p>
-
-          <h2>Skills</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            in maiores autem quidem obcaecati excepturi! Cupiditate eaque itaque
-            magni voluptatibus neque nobis est dolor? Atque sunt minus ipsa
-            asperiores. At.
-          </p>
-          <h2>Projects</h2>
-          <a href="#">Project 1</a>
-          <a href="#">Project 2</a>
-          <a href="#">Project 3</a>
-          <a href="#">Project 4</a>
-          <a href="#">Project 5</a>
-          <h2>Contact</h2>
-          <p>myEmail@email.com</p>
-        </div>
-      </div>
+      <h2>Search Our Site</h2>
+      <form action="">
+        <input type="text" placeholder="Enter your text" />
+        <button type="submit">Search</button>
+      </form>
     </div>
   </body>
 </html>
