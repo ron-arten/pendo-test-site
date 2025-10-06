@@ -11,77 +11,7 @@
     <!-- <script>
       console.log = function () {};
     </script> -->
-    <script>
-      (function (apiKey) {
-        (function (p, e, n, d, o) {
-          var v, w, x, y, z;
-          o = p[d] = p[d] || {};
-          o._q = o._q || [];
-          v = ['initialize', 'identify', 'updateOptions', 'pageLoad', 'track'];
-          for (w = 0, x = v.length; w < x; ++w)
-            (function (m) {
-              o[m] =
-                o[m] ||
-                function () {
-                  o._q[m === v[0] ? 'unshift' : 'push'](
-                    [m].concat([].slice.call(arguments, 0))
-                  );
-                };
-            })(v[w]);
-          y = e.createElement(n);
-          y.async = !0;
-          y.src = 'https://cdn.pendo.io/agent/static/' + apiKey + '/pendo.js';
-          z = e.getElementsByTagName(n)[0];
-          z.parentNode.insertBefore(y, z);
-        })(window, document, 'script', 'pendo');
-
-        // Strings, Numbers, or Bools for value types.
-        pendo.initialize({
-          visitor: {
-            id: 'Robinhood', // Required if user is logged in
-            email: 'just@thistest.com', // Recommended if using Pendo Feedback, or NPS Email
-            full_name: '', // Recommended if using Pendo Feedback
-            role: 'visitor', // Optional
-            language: 'sw',
-            lang: 'es-mx',
-            customUrl: 'ron-arten',
-            trial_expiration_date: '2021-09-20T15:04:05.999-05:00',
-            screen: `"${window.screen.height} x ${window.screen.width}"`,
-          },
-
-          account: {
-            id: 'Pendo_test01', // Highly recommended
-            name: 'A company name', // Optional
-            is_paying: 1, // Recommended if using Pendo Feedback
-            monthly_value: 30, // Recommended if using Pendo Feedback
-            planLevel: 'X', // Optional
-            planPrice: 3.3, // Optional
-            creationDatesFromNow: Date.now(), // Optional
-            creation_date: `"${new Date()}"`,
-
-            // You can add any additional account level key-values here,
-            // as long as it's not one of the above reserved names.
-          },
-        });
-      })('e409807d-2495-432d-6a35-4f9b70cc1387');
-    </script>
-    <script type="text/javascript" src="js/pendo-functions.js"></script>
-    <script type="text/javascript" src="js/init.js"></script>
-    <script
-      src="https://cdn.withpersona.com/dist/persona-v5.1.2.js"
-      integrity="sha384-0LXHuG9ceBdEVRdF698trmE0xe0n9LgW8kNTJ9t/mH3U8VXJy0jNGMw/jPz9W82M"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      const client = new Persona.Client({
-        templateId: 'itmpl_83XtiXBuDo3BywXu6ChZQL1NG3zK',
-        environmentId: 'sandbox',
-        onReady: () => client.open(),
-        onComplete: ({ inquiryId, status, fields }) => {
-          console.log(`Completed inquiry ${inquiryId} with status ${status}`);
-        },
-      });
-    </script>
+    
   </head>
 
   <body>
